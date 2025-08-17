@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEPE GOT PONKED - The Next Meme Revolution</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff4500 0%, #ff6347 50%, #ff4500 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            z-index: -2;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating Ponk Effects */
+        .ponk-particle {
+            position: fixed;
+            font-size: 2rem;
+            animation: float 10s infinite linear;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(100vh) rotate(0deg);
+            }
+            to {
+                transform: translateY(-100px) rotate(360deg);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .logo-container {
+            width: 300px;
+            height: 300px;
+            margin-bottom: 2rem;
+            animation: bonkPulse 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 30px rgba(255, 69, 0, 0.8));
+            background: #ff6347;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        @keyframes bonkPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.05) rotate(-5deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+            75% { transform: scale(1.05) rotate(-3deg); }
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(255, 69, 0, 0.8);
+            animation: glitch 3s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 100% { text-shadow: 0 0 30px rgba(255, 69, 0, 0.8); }
+            25% { text-shadow: -2px 0 #00ff00, 2px 0 #ff00ff; }
+            50% { text-shadow: 2px 0 #00ff00, -2px 0 #ff00ff; }
+            75% { text-shadow: 0 0 30px rgba(255, 69, 0, 0.8); }
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        /* Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4ade80, #22c55e);
+            color: #000;
+            box-shadow: 0 10px 30px rgba(74, 222, 128, 0.5);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(74, 222, 128, 0.7);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #ff6347;
+            box-shadow: 0 10px 30px rgba(255, 99, 71, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: #ff6347;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 99, 71, 0.5);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 69, 0, 0.3);
+            border-color: #ff4500;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #4ade80;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) rotateY(10deg);
+            background: rgba(255, 69, 0, 0.1);
+            border-color: #ff4500;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ff6347;
+        }
+
+        /* Roadmap */
+        .roadmap {
+            padding: 4rem 2rem;
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .roadmap-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .roadmap-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 20px;
+            border-left: 4px solid #4ade80;
+            transition: all 0.3s ease;
+        }
+
+        .roadmap-item:hover {
+            transform: translateX(20px);
+            border-left-color: #ff4500;
+            box-shadow: 0 10px 30px rgba(255, 69, 0, 0.3);
+        }
+
+        .phase-title {
+            font-size: 1.5rem;
+            color: #ff6347;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            font-size: 2rem;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: #ff6347;
+            transform: scale(1.3) rotate(360deg);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(255, 69, 0, 0.8);
+            animation: glitch 3s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <!-- Floating Ponk Particles -->
+    <div id="particles"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>PEPE GOT PONKED</h1>
+        <p class="tagline">The Most PONKED Meme Coin in Crypto History!</p>
+        
+        <div class="cta-buttons">
+            <a href="#" class="btn btn-primary">BUY $PONKED NOW</a>
+        </div>
+        
+        <p style="opacity: 0.7;">Contract: 0xPONK...PEPE (Coming Soon)</p>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2 style="font-size: 3rem; text-align: center; margin-bottom: 2rem;">Why Get PONKED?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span class="feature-icon">🏏</span>
+                <h3 class="feature-title">Maximum PONK</h3>
+                <p>Every holder gets the ultimate PONK experience. The harder the ponk, the higher we fly!</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🐸</span>
+                <h3 class="feature-title">PEPE Power</h3>
+                <p>Combining the legendary PEPE energy with revolutionary PONK technology!</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🚀</span>
+                <h3 class="feature-title">To The Moon</h3>
+                <p>Getting PONKED is just the beginning. Next stop: intergalactic meme domination!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section class="roadmap">
+        <h2 style="font-size: 3rem; text-align: center; margin-bottom: 3rem;">PONK ROADMAP</h2>
+        <div class="roadmap-container">
+            <div class="roadmap-item">
+                <h3 class="phase-title">Phase 1: The First PONK</h3>
+                <p>Launch on DEX, Community building, First viral PONK campaign</p>
+            </div>
+            <div class="roadmap-item">
+                <h3 class="phase-title">Phase 2: PONK Harder</h3>
+                <p>CEX listings, NFT collection, PONK merchandise store</p>
+            </div>
+            <div class="roadmap-item">
+                <h3 class="phase-title">Phase 3: Ultimate PONK</h3>
+                <p>PONK gaming ecosystem, Cross-chain PONKING, World domination</p>
+            </div>
+            <div class="roadmap-item">
+                <h3 class="phase-title">Phase 4: PONK Forever</h3>
+                <p>PONK metaverse, AI-powered PONKING, Intergalactic expansion</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3 style="font-size: 2rem; margin-bottom: 1rem;">Join the PONK Revolution!</h3>
+        <p style="opacity: 0.7; margin-bottom: 2rem;">Don't miss out on the most PONKED opportunity in crypto!</p>
+        <div class="social-links">
+            <a href="#" class="social-link">🐦</a>
+            <a href="#" class="social-link">💬</a>
+            <a href="#" class="social-link">📱</a>
+            <a href="#" class="social-link">📊</a>
+        </div>
+        <p style="margin-top: 3rem; opacity: 0.5; font-size: 0.9rem;">
+            Disclaimer: $PONKED is a meme coin with no intrinsic value. Always PONK responsibly!
+        </p>
+    </footer>
+
+    <script>
+        // Create floating ponk particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particles = ['🏏', '💥', '🐸', '✨'];
+            
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'ponk-particle';
+                particle.textContent = particles[Math.floor(Math.random() * particles.length)];
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Bonk the logo
+        function bonkLogo() {
+            const logo = document.querySelector('.logo-container');
+            logo.classList.add('bonked');
+            
+            // Create bonk effect
+            const bonkEffect = document.createElement('div');
+            bonkEffect.textContent = 'BONK!';
+            bonkEffect.style.position = 'absolute';
+            bonkEffect.style.fontSize = '3rem';
+            bonkEffect.style.color = '#ff6347';
+            bonkEffect.style.fontWeight = 'bold';
+            bonkEffect.style.animation = 'float 1s ease-out forwards';
+            bonkEffect.style.pointerEvents = 'none';
+            logo.appendChild(bonkEffect);
+            
+            setTimeout(() => {
+                logo.classList.remove('bonked');
+                bonkEffect.remove();
+            }, 500);
+        }
+
+        // Initialize
+        createParticles();
+
+        // Add hover sound effect placeholder
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                // Sound effect would go here
+                btn.style.transform = 'scale(1.05)';
+            });
+        });
+    </script>
+</body>
+</html>
